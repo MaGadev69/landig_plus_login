@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PackPilot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">PackPilot</span>
+            </div>
+            <nav class="nav">
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <canvas id="wireframe-canvas"></canvas>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Tu Aliado en la Gestión de Encomiendas.
+                    
+                    <!--<span class="highlight">El Futuro es Ahora.</span>-->
+
+                </h1>
+                <p class="hero-subtitle">
+                    Encargate de tus ventas,
+                    PackPilot se encarga de tu administracion interna.
+                    
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary">
+                        Explorar Ahora
+                        <span class="btn-arrow">→</span>
+                    </button>
+                    <button class="btn btn-secondary">Conoce Más</button>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll para explorar</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Usuarios Activos</div>
+                    <div class="stat-number" data-target="150000">0</div>
+                    <div class="stat-suffix">K+</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Paquetes procesados</div>
+                    <div class="stat-number" data-target="2500">0</div>
+                    <div class="stat-suffix">+</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Países</div>
+                    <div class="stat-number" data-target="1">0</div>
+                    <div class="stat-suffix">+</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Satisfacción</div>
+                    <div class="stat-number" data-target="99">0</div>
+                    <div class="stat-suffix">%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Description -->
+    <section class="description" id="description">
+        <div class="container">
+            <div class="description-content">
+                <h2 class="section-title">
+                    <span class="highlight">Inteligencia</span> en Cada Proceso
+                </h2>
+                <p class="section-text">
+                    Transforma el caos diario en un proceso organizado, eficiente y rentable. 
+                    Ahorra tiempo y haz crecer tu negocio.
+                    
+                </p>
+                <p class="section-text">
+                    No es solo una nueva forma de alojar servicios — es una evolución completa que permite 
+                    que las aplicaciones sean <span class="highlight">creadas más rápido, ejecutadas más barato, 
+                    escaladas instantáneamente</span>, y recompensen a todos los que participan.
+                </p>
+                <button class="btn btn-outline">
+                    Sobre Nuestra Tecnología
+                    <span class="btn-arrow">→</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By
+    <section class="trusted" id="trusted">
+        <div class="container">
+            <h3 class="trusted-title">Confiado por</h3>
+            <div class="partners-grid">
+                <div class="partner-logo">TechCorp</div>
+                <div class="partner-logo">InnovateLab</div>
+                <div class="partner-logo">FutureWorks</div>
+                <div class="partner-logo">NextGen</div>
+                <div class="partner-logo">QuantumSoft</div>
+                <div class="partner-logo">CyberFlow</div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Features Section -->
+     
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="features-left">
+                    
+                    <h2 class="section-title">
+                        <span class="highlight">Beneficios Inmediatos</span> 
+                        
+                    </h2>
+                    <p class="section-subtitle">Ahorra Tiempo Valioso</p>
+                </div>
+                <div class="features-right">
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                ¿Qué es PackPilot?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>PackPilot es una plataforma digital que automatiza la gestión de encomiendas en tu local. Utiliza reconocimiento óptico de caracteres (OCR) para leer automáticamente las guías de PICKit y organizar toda la información en un dashboard intuitivo.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                ¿Cómo funciona?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>1. Escaneas la guía del paquete. 2. PackPilot lee la información. 3. El sistema organiza el paquete. 4. Recibes alertas sobre paquetes que requieren atención.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                ¿Por qué es mejor que un cuaderno?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Por su velocidad, precisión, capacidad de generar reportes y profesionalismo. Encuentra cualquier paquete en segundos, elimina errores manuales y te permite escalar tu operación sin esfuerzo.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                ¿Es difícil de usar?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>¡Para nada! PackPilot está diseñado para ser intuitivo. Si sabes usar WhatsApp, sabes usar PackPilot. La interfaz es simple y todas las funciones importantes están a un clic de distancia.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                ¿Es seguro?
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Absolutamente. Manejamos la información con estándares de seguridad de alto nivel. Solo almacenamos lo necesario para la gestión y nunca compartimos datos personales de tus clientes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="cta">
+        <div class="cta-bg">
+            <div class="radial-lines"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">¡Transforma tu local hoy mismo!</h2>
+                
+                <p class="cta-text">
+                    No dejes que la gestión de encomiendas limite el crecimiento de tu negocio. 
+                    PackPilot te da las herramientas que necesitas para ofrecer un servicio excepcional.
+                </p>
+                <button class="btn btn-primary btn-large">
+                    Comenzar Ahora
+                    <span class="btn-arrow">→</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="logo">
+                        <span class="logo-text">PACKPILOT</span>
+                    </div>
+                    <p>© 2025 MagaDev by Jonatan Gasquez</p>
+                    <p>Building software with Zero Trust</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="#hero">Inicio</a>
+                        <a href="#features">Características</a>
+                        <a href="#cta">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ======================= SCRIPT DE LOGIN (Sin cambios) ======================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Script del formulario de Login ---
+            const loginForm = document.getElementById('login-form');
+            const errorMessage = document.getElementById('error-message');
+
+            if (loginForm) {
+                loginForm.addEventListener('submit', async function (event) {
+                    event.preventDefault();
+                    errorMessage.textContent = '';
+
+                    const formData = new FormData(loginForm);
+
+                    try {
+                        const response = await fetch('/auth/jwt/login', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        if (response.ok) {
+                            window.location.href = '/';
+                        } else {
+                            const errorData = await response.json();
+                            let detail = errorData.detail;
+
+                            if (detail === 'LOGIN_BAD_CREDENTIALS') {
+                                errorMessage.textContent = 'Usuario o contraseña incorrectos.';
+                            } else {
+                                errorMessage.textContent = 'Error inesperado. Inténtalo de nuevo.';
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Error en el fetch:', error);
+                        errorMessage.textContent = 'No se pudo conectar con el servidor.';
+                    }
+                });
+            }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/three-scene.js"></script>
+</body>
+</html>
+
