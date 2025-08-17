@@ -1,8 +1,10 @@
 /* Variables CSS */
 :root {
-    --color-black: #000000;
+    --color-black: rgba(8, 5, 5, 0.966);
+
     --color-white: #ffffff;
     --color-green: #00FF88;
+    
     --color-green-dark: #00CC66;
     --color-gray-dark: #1a1a1a;
     --color-gray-medium: #333333;
@@ -55,7 +57,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.685);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: var(--transition-normal);
