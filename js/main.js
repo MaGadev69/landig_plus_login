@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initParticles();
     initHeaderScroll();
-    
+    initLoginModal();
     console.log('Landing page initialized successfully');
 });
 
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //revisa esto porfa!
 
 // Modal functionality
+        function initLoginModal() {
             const openModalBtn = document.getElementById('open-login-modal');
             const closeModalBtn = document.getElementById('close-login-modal');
             const modal = document.getElementById('login-modal');
@@ -83,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     modalError.textContent = 'No se pudo conectar con el servidor.';
                 }
             });
-
+        }
 //
 
 
