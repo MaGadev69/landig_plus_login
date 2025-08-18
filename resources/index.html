@@ -20,45 +20,15 @@
             </div>
             <nav class="nav">
                 <div class="client-access">
-                    <a href="#" class="client-access-link" id="open-login-modal">
-                        <svg class="user-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                    <a href="login.html" class="client-access-link">
+                        <svg class="user-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="24px" height="24px"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
                         <span>Acceso Clientes</span>
                     </a>
+                    <!--<a href="login.html" class="btn btn-primary btn-login">Ingresar</a>-->
                 </div>
             </nav>
         </div>
     </header>
-    <!-- Modal de Login -->
-    <div class="modal-overlay" id="login-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button class="modal-close" id="close-login-modal">&times;</button>
-                <h2>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
-                    </svg>
-                    Acceso a PackPilot
-                </h2>
-            </div>
-            <div class="modal-body">
-                <form id="modal-login-form">
-                    <div class="modal-form-group">
-                        <label for="modal-username">Email</label>
-                        <input type="email" id="modal-username" name="username" required autocomplete="username" placeholder="tu@email.com">
-                    </div>
-                    <div class="modal-form-group">
-                        <label for="modal-password">Contraseña</label>
-                        <input type="password" id="modal-password" name="password" required autocomplete="current-password" placeholder="••••••••">
-                    </div>
-                    <button type="submit" class="modal-submit-btn">Ingresar a mi cuenta</button>
-                    <div class="modal-error" id="modal-error-message"></div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                ¿Necesitas ayuda? <a href="#" style="color: #764ba2;">Contacta soporte</a>
-            </div>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -343,21 +313,41 @@
     <!-- ======================= SCRIPT DE LOGIN (Sin cambios) ======================= -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            
+            // --- Script del formulario de Login ---
+            const loginForm = document.getElementById('login-form');
+            const errorMessage = document.getElementById('error-message');
 
+            if (loginForm) {
+                loginForm.addEventListener('submit', async function (event) {
+                    event.preventDefault();
+                    errorMessage.textContent = '';
 
+                    const formData = new FormData(loginForm);
 
+                    try {
+                        const response = await fetch('/auth/jwt/login', {
+                            method: 'POST',
+                            body: formData
+                        });
 
+                        if (response.ok) {
+                            window.location.href = '/';
+                        } else {
+                            const errorData = await response.json();
+                            let detail = errorData.detail;
 
-
-
-
-
-
-
-
-
-            
+                            if (detail === 'LOGIN_BAD_CREDENTIALS') {
+                                errorMessage.textContent = 'Usuario o contraseña incorrectos.';
+                            } else {
+                                errorMessage.textContent = 'Error inesperado. Inténtalo de nuevo.';
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Error en el fetch:', error);
+                        errorMessage.textContent = 'No se pudo conectar con el servidor.';
+                    }
+                });
+            }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/main.js"></script>

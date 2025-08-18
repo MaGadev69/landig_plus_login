@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="static/icons/favicon.ico">
+    
 </head>
 <body>
     <!-- Header -->
@@ -28,6 +29,7 @@
             </nav>
         </div>
     </header>
+
     <!-- Modal de Login -->
     <div class="modal-overlay" id="login-modal">
         <div class="modal-content">
@@ -69,23 +71,11 @@
             <div class="hero-content">
                 <h1 class="hero-title">
                     Gestión Integral de Encomiendas.
-                    
-                    <!--<span class="highlight">El Futuro es Ahora.</span>-->
-
                 </h1>
                 <p class="hero-subtitle">
                     Encargate de tus ventas,
                     PackPilot se encarga de tu administracion interna.
-                    
                 </p>
-                <!-- <div class="hero-actions">
-                    <button class="btn btn-primary">
-                        Explorar Ahora
-                        <span class="btn-arrow">→</span>
-                    </button>
-                    <button class="btn btn-secondary">Conoce Más</button>
-                </div>
-                -->
             </div>
         </div>
         <div class="scroll-indicator">
@@ -130,44 +120,17 @@
                     <span class="highlight">Inteligencia</span> en Cada Proceso
                 </h2>
                 <p class="section-text">
-                    
                     PackPilot es la solución digital que revoluciona la forma en que tu local maneja las encomiendas. Diseñada especialmente para comercios que reciben y entregan paquetes de PICKit y Andreani, nuestra plataforma transforma el caos diario en un proceso organizado, eficiente y rentable.
                 </p>
-                <!--<p class="section-text">
-                    No es solo una nueva forma de alojar servicios — es una evolución completa que permite 
-                    que las aplicaciones sean <span class="highlight">creadas más rápido, ejecutadas más barato, 
-                    escaladas instantáneamente</span>, y recompensen a todos los que participan.
-                </p>
-                <button class="btn btn-outline">
-                    Sobre Nuestra Tecnología
-                    <span class="btn-arrow">→</span>
-                </button>
-                -->
             </div>
         </div>
     </section>
-
-    <!-- Trusted By
-    <section class="trusted" id="trusted">
-        <div class="container">
-            <h3 class="trusted-title">Confiado por</h3>
-            <div class="partners-grid">
-                <div class="partner-logo">TechCorp</div>
-                <div class="partner-logo">InnovateLab</div>
-                <div class="partner-logo">FutureWorks</div>
-                <div class="partner-logo">NextGen</div>
-                <div class="partner-logo">QuantumSoft</div>
-                <div class="partner-logo">CyberFlow</div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
             <div class="features-content">
                 <div class="features-left">
-                    
                     <h2 class="section-title">
                         <span class="highlight">Beneficios Inmediatos</span> 
                     </h2>
@@ -178,12 +141,7 @@
                             <li>Elimina la frustración de no encontrar paquetes o perder información importante</li>
                             <li>Estadísticas para mejorar continuamente tu operación</li>
                         </ul>
-                        
-
-
-
                     </p>
-                    
                 </div>
                 <div class="features-right">
                     <div class="faq-container">
@@ -222,10 +180,8 @@
                                     <li>Encuentra cualquier paquete en segundos, no en minutos.</li>
                                     <li>Elimina errores de escritura y pérdida de papeles.</li>
                                     <li>Ve estadísticas de tu operación y mejora continuamente.</li>
-                                    
                                     <li>Crece tu volumen sin aumentar el tiempo de gestión.</li>
                                 </ul>
-                                
                             </div>
                         </div>
                         
@@ -247,7 +203,6 @@
                                 <p>Solo necesitas un dispositivo con cámara (como un celular o tablet) y una conexión a internet. PackPilot funciona en cualquier navegador moderno, así que no necesitas instalar nada.</p>
                             </div>
                         </div>
-                        
                         
                         <div class="faq-item">
                             <button class="faq-question">
@@ -273,9 +228,6 @@
                             </div>
                         </div>  
                         
-                        
-                        
-                        
                         <div class="faq-item">
                             <button class="faq-question">
                                 ¿Es seguro?
@@ -290,12 +242,6 @@
             </div>
         </div>
     </section>
-    
-
-
-
-
-
 
     <!-- Final CTA -->
     <section class="final-cta" id="cta">
@@ -305,16 +251,10 @@
         <div class="container">
             <div class="cta-content">
                 <h2 class="cta-title">¡Transforma tu local hoy mismo!</h2>
-                
                 <p class="cta-text">
                     No dejes que la gestión de encomiendas limite el crecimiento de tu negocio. 
                     PackPilot te da las herramientas que necesitas para ofrecer un servicio excepcional.
                 </p>
-                <!--<button class="btn btn-primary btn-large">
-                    Comenzar Ahora
-                    <span class="btn-arrow">→</span>
-                </button>
-                -->
             </div>
         </div>
     </section>
@@ -340,28 +280,137 @@
             </div>
         </div>
     </footer>
-    <!-- ======================= SCRIPT DE LOGIN (Sin cambios) ======================= -->
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            
+            // Modal functionality
+            const openModalBtn = document.getElementById('open-login-modal');
+            const closeModalBtn = document.getElementById('close-login-modal');
+            const modal = document.getElementById('login-modal');
+            const modalForm = document.getElementById('modal-login-form');
+            const modalError = document.getElementById('modal-error-message');
 
+            // Open modal
+            openModalBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
 
+            // Close modal
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                modalError.textContent = '';
+            }
 
+            closeModalBtn.addEventListener('click', closeModal);
 
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
 
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
 
+            // Handle form submission
+            modalForm.addEventListener('submit', async function (event) {
+                event.preventDefault();
+                modalError.textContent = '';
 
+                const formData = new FormData(modalForm);
 
+                try {
+                    const response = await fetch('/auth/jwt/login', {
+                        method: 'POST',
+                        body: formData
+                    });
 
+                    if (response.ok) {
+                        window.location.href = '/';
+                    } else {
+                        const errorData = await response.json();
+                        let detail = errorData.detail;
 
+                        if (detail === 'LOGIN_BAD_CREDENTIALS') {
+                            modalError.textContent = 'Usuario o contraseña incorrectos.';
+                        } else {
+                            modalError.textContent = 'Error inesperado. Inténtalo de nuevo.';
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error en el fetch:', error);
+                    modalError.textContent = 'No se pudo conectar con el servidor.';
+                }
+            });
 
+            // FAQ functionality (existing code)
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-icon').textContent = '+';
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                        question.querySelector('.faq-icon').textContent = '−';
+                    }
+                });
+            });
 
+            // Stats animation (existing code)
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
 
-            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statNumbers = entry.target.querySelectorAll('.stat-number');
+                        statNumbers.forEach(stat => {
+                            const target = parseInt(stat.getAttribute('data-target'));
+                            animateNumber(stat, target);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const statsSection = document.querySelector('.stats');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+
+            function animateNumber(element, target) {
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.floor(current);
+                }, 20);
+            }
+        });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/three-scene.js"></script>
+
 </body>
 </html>
+

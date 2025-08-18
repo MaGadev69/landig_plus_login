@@ -11,6 +11,91 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Landing page initialized successfully');
 });
 
+
+
+
+
+//revisa esto porfa!
+
+// Modal functionality
+            const openModalBtn = document.getElementById('open-login-modal');
+            const closeModalBtn = document.getElementById('close-login-modal');
+            const modal = document.getElementById('login-modal');
+            const modalForm = document.getElementById('modal-login-form');
+            const modalError = document.getElementById('modal-error-message');
+            // Open modal
+            openModalBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            // Close modal
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                modalError.textContent = '';
+            }
+
+            closeModalBtn.addEventListener('click', closeModal);
+
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+
+            // Handle form submission
+            modalForm.addEventListener('submit', async function (event) {
+                event.preventDefault();
+                modalError.textContent = '';
+
+                const formData = new FormData(modalForm);
+
+                try {
+                    const response = await fetch('/auth/jwt/login', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (response.ok) {
+                        window.location.href = '/';
+                    } else {
+                        const errorData = await response.json();
+                        let detail = errorData.detail;
+
+                        if (detail === 'LOGIN_BAD_CREDENTIALS') {
+                            modalError.textContent = 'Usuario o contraseña incorrectos.';
+                        } else {
+                            modalError.textContent = 'Error inesperado. Inténtalo de nuevo.';
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error en el fetch:', error);
+                    modalError.textContent = 'No se pudo conectar con el servidor.';
+                }
+            });
+
+//
+
+
+
+
+
+
+
+
+
+
+
 // Scroll reveal animation
 function initScrollReveal() {
     const observerOptions = {
